@@ -17,7 +17,7 @@ public class CrawlerTest{
     public void testStockCrawler(){
         StockInfo stock = new StockInfo(Utils.stockType.SZ, 2108);
         Date start = new Date(2015, 9, 10);
-        Date end = new Date(2015, 9, 10);
+        Date end = new Date(2015, 9, 20);
         Crawler sc;
         try {
             sc = new Crawler(stock);

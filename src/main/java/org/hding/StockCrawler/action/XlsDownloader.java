@@ -48,10 +48,7 @@ public class XlsDownloader {
                           genFileName();
         System.out.println(filePath);
         File file = new File(filePath);
-        boolean isSuccess = file.getParentFile().mkdirs();
-        if (!isSuccess) {
-            return false;
-        }
+        file.getParentFile().mkdirs();
         FileOutputStream fileOut = new FileOutputStream(file);
         byte[] buffer = new byte[Utils.BUFFER_SIZE];  
         int length;
