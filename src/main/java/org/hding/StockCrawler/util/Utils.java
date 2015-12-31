@@ -1,6 +1,6 @@
 package org.hding.StockCrawler.util;
 
-import SCPackage.StockInfo;
+import org.hding.StockCrawler.base.StockInfo;
 
 public class Utils {
     public final static int BUFFER_SIZE = 10 * 1024;

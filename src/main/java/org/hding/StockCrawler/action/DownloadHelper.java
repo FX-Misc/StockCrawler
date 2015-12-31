@@ -5,18 +5,14 @@ import java.io.InputStream;
 import java.net.URI;
 
 import org.apache.http.HttpEntity;
-//import org.apache.http.NameValuePair;
 import org.apache.http.Header;
-//import org.apache.http.HeaderElement;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-//import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.util.EntityUtils;
 import org.apache.http.client.config.RequestConfig;
-import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 
 public class DownloadHelper {
     private URI uri;

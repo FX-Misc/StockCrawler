@@ -1,12 +1,11 @@
-package SCPackage;
+package org.hding.StockCrawler;
 
-import SCPackage.Utils;
-import SCPackage.Date;
-import SCPackage.StockInfo;
-import SCPackage.DateIterator;
-import SCPackage.XlsDownloader;
-import SCPackage.DailyTransInfo;
-import SCPackage.ExtractDailyTrans;
+import org.hding.StockCrawler.util.Utils;
+import org.hding.StockCrawler.base.Date;
+import org.hding.StockCrawler.base.StockInfo;
+import org.hding.StockCrawler.base.DateIterator;
+import org.hding.StockCrawler.action.XlsDownloader;
+import org.hding.StockCrawler.action.ExtractDailyTrans;
 
 import java.io.FileWriter;  
 import java.io.File;
@@ -55,9 +54,9 @@ public class StockCrawler {
         }
         if (endDate == null) {
             Calendar c = Calendar.getInstance();
-            endDate.year = c.get(Calendar.YEAR);
-            endDate.month = c.get(Calendar.MONTH);
-            endDate.day = c.get(Calendar.DATE);
+            endDate.setYear(c.get(Calendar.YEAR));
+            endDate.setMonth(c.get(Calendar.MONTH));
+            endDate.setDay(c.get(Calendar.DATE));
         }
         if (parentPath == null) {
             File directory = new File("");

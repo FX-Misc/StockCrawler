@@ -6,22 +6,11 @@ import java.io.InputStream;
 
 import java.net.URI;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.NameValuePair;
-import org.apache.http.Header;
-import org.apache.http.HeaderElement;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.util.EntityUtils;
 
-import SCPackage.Utils;
-import SCPackage.Date;
-import SCPackage.StockInfo;
-import SCPackage.DownloadHelper;
+import org.hding.StockCrawler.util.Utils;
+import org.hding.StockCrawler.base.Date;
+import org.hding.StockCrawler.base.StockInfo;
 
 public class XlsDownloader {
     private Date date;

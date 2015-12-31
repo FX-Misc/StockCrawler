@@ -1,8 +1,5 @@
 package org.hding.StockCrawler.base;
 
-import SCPackage.Date;
-import java.io.File;
-
 public class DateIterator {
     private Date curr;
     private Date end;

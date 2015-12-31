@@ -1,6 +1,6 @@
 package org.hding.StockCrawler.base;
 
-import SCPackage.Utils;
+import org.hding.StockCrawler.util.Utils;
 
 public class Date implements Comparable<Date>{
     int year;
@@ -64,7 +64,6 @@ public class Date implements Comparable<Date>{
             return 30;            
         }
     }
-    @Override
     public int compareTo(Date otherDate) {
         if (this.year < otherDate.year) {
             return -1;
@@ -109,6 +108,15 @@ public class Date implements Comparable<Date>{
     }
     public int getDay() {
         return this.day;
+    }
+    public void setYear(int year) {
+        this.year = year;
+    }
+    public void setMonth(int month) {
+        this.month = month;
+    }
+    public void setDay(int day) {
+        this.day = day;
     }
     public String toString() {
         return Utils.preZero(year, Utils.valType.NL, 4) + "-" + 

@@ -1,10 +1,8 @@
 package org.hding.StockCrawler.action;
 
-import SCPackage.DailyTransInfo;
-import SCPackage.Date;
-import SCPackage.StockInfo;
-import SCPackage.Utils;
-import SCPackage.DownloadHelper;
+import org.hding.StockCrawler.base.Date;
+import org.hding.StockCrawler.base.StockInfo;
+import org.hding.StockCrawler.util.Utils;
 
 import java.io.InputStream;
 import java.util.Map;
@@ -26,7 +24,7 @@ public class ExtractDailyTrans {
         //
     }
     private int dateToQuarter(Date date) {
-        return (date.month - 1) / 3 + 1;
+        return (date.getMonth() - 1) / 3 + 1;
     }
     private StringBuilder inputStreamToStringBuilder(InputStream is) throws Exception {
         StringBuilder ret = new StringBuilder();
@@ -62,7 +60,7 @@ public class ExtractDailyTrans {
             .setScheme("http")
             .setHost("vip.stock.finance.sina.com.cn")
             .setPath(path)
-            .setParameter("year", String.valueOf(date.year))
+            .setParameter("year", String.valueOf(date.getYear()))
             .setParameter("jidu", String.valueOf(dateToQuarter(date)))
             .build();        
         DownloadHelper download = new DownloadHelper(uri);
@@ -74,13 +72,13 @@ public class ExtractDailyTrans {
     } 
     public String extract(StockInfo stock, Date date) throws Exception {
         String trans = null;
-        if (year == date.year && 
+        if (year == date.getYear() &&
             quarter == dateToQuarter(date)) {
             trans = map.get(date.toString());
         } else {
             map = new HashMap<String, String>(70);
             if (extractRun(stock, date)) {
-                year = date.year;
+                year = date.getYear();
                 quarter = dateToQuarter(date);
                 trans = map.get(date.toString());
             } else {

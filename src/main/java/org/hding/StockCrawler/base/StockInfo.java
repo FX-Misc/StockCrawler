@@ -1,6 +1,6 @@
 package org.hding.StockCrawler.base;
 
-import SCPackage.Utils;
+import org.hding.StockCrawler.util.Utils;
 
 public class StockInfo {
     int type;

@@ -1,7 +1,5 @@
 package org.hding.StockCrawler.base;
 
-import SCPackage.Date;
-
 public class  DailyTransInfo {
     Date date;
 

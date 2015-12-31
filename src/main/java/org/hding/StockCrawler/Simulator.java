@@ -1,10 +1,10 @@
-package SCPackage;
+package org.hding.StockCrawler;
 
 //import java.util.*;
 
-import SCPackage.TransStock;
-import SCPackage.Date;
-import SCPackage.DateIterator;
+import org.hding.StockCrawler.base.StockInfo;
+import org.hding.StockCrawler.base.TransStock;
+import org.hding.StockCrawler.base.Date;
 
 public class Simulator {
     //List listOfTransStock;
@@ -17,7 +17,7 @@ public class Simulator {
     public Simulator() {
 
     }
-    public run() {
+    public void run() {
 
     }
 }
