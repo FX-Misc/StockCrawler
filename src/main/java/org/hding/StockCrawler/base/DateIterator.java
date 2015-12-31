@@ -1,4 +1,4 @@
-package SCPackage;
+package org.hding.StockCrawler.base;
 
 import SCPackage.Date;
 import java.io.File;

@@ -1,4 +1,4 @@
-package SCPackage;
+package org.hding.StockCrawler.action;
 
 import SCPackage.DailyTransInfo;
 import SCPackage.Date;

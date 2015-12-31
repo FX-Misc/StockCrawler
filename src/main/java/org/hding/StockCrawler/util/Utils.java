@@ -1,4 +1,4 @@
-package SCPackage;
+package org.hding.StockCrawler.util;
 
 import SCPackage.StockInfo;
 

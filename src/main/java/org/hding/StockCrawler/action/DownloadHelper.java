@@ -1,4 +1,4 @@
-package SCPackage;
+package org.hding.StockCrawler.action;
 
 import java.io.InputStream;
 
