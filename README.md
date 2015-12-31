@@ -11,6 +11,7 @@ Happy hacking!
 ## Usage
 ```
 mvn pakcage
+mvn test
 ```
 
 # StockCrawler
