@@ -5,7 +5,6 @@
   <groupId>org.hding.StockCrawler</groupId>
   <artifactId>StockCrawler</artifactId>
   <version>0.0.1</version>
-  <packaging>jar</packaging>
 
   <name>StockCrawler</name>
   <url>http://maven.apache.org</url>
