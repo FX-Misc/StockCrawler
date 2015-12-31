@@ -29,7 +29,7 @@ public class ExtractDailyTrans {
     private StringBuilder inputStreamToStringBuilder(InputStream is) throws Exception {
         StringBuilder ret = new StringBuilder();
         byte[] buffer = new byte[Utils.BUFFER_SIZE];  
-        int length = 0;
+        int length;
         while ((length = is.read(buffer)) != -1) {
             ret.append(new String(buffer, 0, length));
         }
@@ -71,7 +71,7 @@ public class ExtractDailyTrans {
         return ret;
     } 
     public String extract(StockInfo stock, Date date) throws Exception {
-        String trans = null;
+        String trans;
         if (year == date.getYear() &&
             quarter == dateToQuarter(date)) {
             trans = map.get(date.toString());
