@@ -8,6 +8,11 @@ This program can extract both kinds of information from SINA finance and store l
 
 Happy hacking!
 
+## Usage
+```
+mvn pakcage
+```
+
 # StockCrawler
 
 新浪财经的股票交易信息的网页爬虫。

@@ -7,18 +7,18 @@ import org.hding.StockCrawler.base.DateIterator;
 import org.hding.StockCrawler.action.XlsDownloader;
 import org.hding.StockCrawler.action.ExtractDailyTrans;
 
-import java.io.FileWriter;  
+import java.io.FileWriter;
 import java.io.File;
 
 import java.util.Calendar;
 
 
-public class StockCrawler {
+public class Crawler {
     private StockInfo stock;
     private Date startDate;
     private Date endDate;
     private String parentPath;
-    public StockCrawler() throws Exception {
+    public Crawler() throws Exception {
         stock = null;
         startDate = null;
         endDate = null;
@@ -28,9 +28,9 @@ public class StockCrawler {
         //                    c.get(Calendar.MONTH),
         //                    c.get(Calendar.DATE));
         // File directory = new File("");
-        // parentPath = directory.getCanonicalPath() + "/data"; 
+        // parentPath = directory.getCanonicalPath() + "/data";
     }
-    public StockCrawler(StockInfo stock) throws Exception {
+    public Crawler(StockInfo stock) throws Exception {
         this();
         this.stock = new StockInfo(stock);
         //this.startDate = new Date(trans.getStartDate(stock));
@@ -60,10 +60,10 @@ public class StockCrawler {
         }
         if (parentPath == null) {
             File directory = new File("");
-            parentPath = directory.getCanonicalPath() + "/data"; 
+            parentPath = directory.getCanonicalPath() + "/data";
         }
         String fileName = Utils.genPath(parentPath, stock) + "/" +
-                          "DailyTransSummary.csv";
+                "DailyTransSummary.csv";
         File file =new File(fileName);
         boolean newFileCreate = false;
         if(!file.exists()){
@@ -72,7 +72,7 @@ public class StockCrawler {
             file.createNewFile();
             newFileCreate = true;
         }
-        FileWriter fw = new FileWriter(fileName, true); 
+        FileWriter fw = new FileWriter(fileName, true);
         if (newFileCreate) {
             //handle csv header
             fw.write("Date,Open,High,Low,Close,Volume,Amout\n");
@@ -82,7 +82,7 @@ public class StockCrawler {
         System.out.println(download.execute());
         String tranString = trans.extract(stock, startDate);
         if (tranString != null) {
-            fw.write(tranString.replaceAll(" ", ",") + "\n");    
+            fw.write(tranString.replaceAll(" ", ",") + "\n");
         }
         while (di.hasNext()) {
             Date date = di.next();
@@ -90,9 +90,9 @@ public class StockCrawler {
             System.out.println(download.execute());
             tranString = trans.extract(stock, date);
             if (tranString != null) {
-                fw.write(tranString.replaceAll(" ", ",") + "\n");    
+                fw.write(tranString.replaceAll(" ", ",") + "\n");
             }
         }
-        fw.close(); 
+        fw.close();
     }
 }
